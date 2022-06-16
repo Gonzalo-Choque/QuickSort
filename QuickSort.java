@@ -1,8 +1,8 @@
 /*	Ejercicio1: Tiempo de ejecucion de QuickSort para varios archivos
 *	Autores: 
 *	- Gonzalo Joel Choque Dongo
-*	- Carlos Fabian Arteaga Peña
-*	- Shirley Chambi Chayña
+*	- Carlos Fabian Arteaga PeÃ±a
+*	- Shirley Chambi ChayÃ±a
 *	- Nelson Huaman Apaza
 */
 
@@ -31,14 +31,19 @@ public class QuickSort {
 		String [] archivos = leerArchivos();
 
 		gnu = new File ("Resultado.txt");
-    	gnu.createNewFile();
+    		gnu.createNewFile();
 		
 		//Calcula tiempos
-    	bucleTiempos(archivos);
-    	
-    	//imprime resultado
-    	bw.close();
-		Desktop.getDesktop().open(gnu);
+    		if(archivos.length>0) {
+    			bucleTiempos(archivos);
+    		
+    			//imprime resultado
+        		bw.close();
+    			Desktop.getDesktop().open(gnu);
+    		}
+    		else{
+    			System.out.println("No hay archivos por ordenar"); 		
+    		} 
 	 	
 	}
 	
@@ -128,8 +133,8 @@ public class QuickSort {
 	}
 	private static void quickSort(int vec[], int inicio, int fin){
 		int pivote=vec[inicio];	// primer elemento como pivote
-		int i=inicio, j=fin;	// i realiza la búsqueda de izquierda a derecha
-		int aux;				// j realica la búsqueda de derecha a izquierda
+		int i=inicio, j=fin;	// i realiza la bÃºsqueda de izquierda a derecha
+		int aux;				// j realica la bÃºsqueda de derecha a izquierda
 		
 		while(i<j) {
 			while(vec[i]<= pivote && i<j) i++;	// busca elemento mayor que pivote
