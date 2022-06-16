@@ -1,0 +1,2 @@
+El archivo prueba1.txt con 13 elementos	- demoro: 	6800 nanosegundos
+El archivo prueba2.txt con 9 elementos	- demoro: 	2500 nanosegundos
